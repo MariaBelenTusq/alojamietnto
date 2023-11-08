@@ -1,1 +1,1 @@
-# alojamietnto
+# alojamiento
