@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proxy para WhatsApp Business</title>
+  <style>
+    /* Estilos CSS */
+  </style>
+</head>
+<body>
+  <h1>Proxy para WhatsApp Business</h1>
+  <form id="whatsapp-form">
+    <label for="phone">Número de teléfono:</label>
+    <input type="text" id="phone" name="phone" required>
+    <label for="message">Mensaje:</label>
+    <textarea id="message" name="message" required></textarea>
+    <button type="submit">Enviar mensaje</button>
+  </form>
+
+  <script>
+    const form = document.getElementById('whatsapp-form');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const phone = encodeURIComponent(document.getElementById('phone').value);
+      const message = encodeURIComponent(document.getElementById('message').value);
+      const url = `https://api.whatsapp.com/send?phone=${phone}&text=${message}`;
+      window.location.href = url;
+    });
+  </script>
+</body>
+</html>
+
